@@ -1,0 +1,7 @@
+#display-box {
+  padding: auto;
+  width: 90%;
+  height: 420px;
+  border: 2px solid;
+  text-align: center;
+}
