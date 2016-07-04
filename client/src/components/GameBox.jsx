@@ -16,11 +16,15 @@ var GameBox = React.createClass({
   selectCharacter: function(){
     let computerChoice = chars[_.random(7)]
     console.log(computerChoice);
+    console.log(_.values(computerChoice));
   },
 
   trueOrFalse: function(question){
-    if(question === this.state.computerChoice.species){
-      return true;
+    var choiceArray = _.values(this.state.computerChoice)
+    if((choiceArray.indexOf(question))+1){
+      return "Yes";
+    } else {
+      return "No";
     }
   },
 

@@ -19713,11 +19713,15 @@
 	  selectCharacter: function selectCharacter() {
 	    var computerChoice = chars[_.random(7)];
 	    console.log(computerChoice);
+	    console.log(_.values(computerChoice));
 	  },
 	
 	  trueOrFalse: function trueOrFalse(question) {
-	    if (question === this.state.computerChoice.species) {
-	      return true;
+	    var choiceArray = _.values(this.state.computerChoice);
+	    if (choiceArray.indexOf(question) + 1) {
+	      return "Yes";
+	    } else {
+	      return "No";
 	    }
 	  },
 	
@@ -19790,7 +19794,7 @@
 	    return React.createElement(
 	      'div',
 	      null,
-	      React.createElement('img', { src: this.props.photo, height: '100', width: '80' }),
+	      React.createElement('img', { src: this.props.photo, height: '100', width: '80', className: 'pic' }),
 	      React.createElement(
 	        'h5',
 	        null,
